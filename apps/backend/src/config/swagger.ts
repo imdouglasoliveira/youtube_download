@@ -10,7 +10,7 @@ const options: swaggerJsdoc.Options = {
       description: 'API para download de vídeos do YouTube usando yt-dlp',
       contact: {
         name: 'YouTube Downloader',
-        url: 'https://github.com/user/youtube-downloader'
+        url: 'https://github.com/imdouglasoliveira/youtube_download'
       }
     },
     servers: [

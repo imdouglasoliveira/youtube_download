@@ -422,7 +422,10 @@ class DevManager {
   setupMonitoring() {
     console.log('👀 Configurando monitoramento...')
 
-    // Health check periódico (com delay inicial)
+    // Health check temporariamente desabilitado para debug
+    // TODO: Reabilitar após identificar problema de conexão
+    console.log('⚠️  Health check desabilitado temporariamente para debug')
+    /*
     setTimeout(() => {
       this.healthCheckInterval = setInterval(async () => {
         if (this.isShuttingDown) return
@@ -438,6 +441,7 @@ class DevManager {
         }
       }, 45000) // Check a cada 45 segundos
     }, 60000) // Aguardar 60 segundos antes de iniciar health checks
+    */
 
     // Handlers de shutdown
     process.on('SIGINT', () => this.cleanup())
