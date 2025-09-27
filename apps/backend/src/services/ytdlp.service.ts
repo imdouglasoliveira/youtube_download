@@ -177,7 +177,7 @@ export class YtDlpService {
         '--dump-json',
         '--no-playlist',
         '--no-check-certificate',
-        '--socket-timeout', '30',
+        '--socket-timeout', '60',
         '--retries', '3'
       ]
 
@@ -192,7 +192,7 @@ export class YtDlpService {
       try {
         // Usar exec que é mais confiável para comandos complexos
         const processHandle = exec(fullCommand, {
-          timeout: 90000, // 90 seconds for video info fetch
+          timeout: 180000, // 180 seconds for video info fetch
           windowsHide: true,
           maxBuffer: 1024 * 1024 // 1MB buffer limit
         })
@@ -211,7 +211,7 @@ export class YtDlpService {
             }
           }, 2000)
           reject(new AppError('Request timeout - video information could not be retrieved', 408))
-        }, 120000) // 120 seconds - must be longer than exec timeout
+        }, 240000) // 240 seconds - must be longer than exec timeout
 
         processHandle.stdout?.on('data', (data: any) => {
           output += data.toString()
@@ -802,7 +802,8 @@ export class YtDlpService {
       }
 
       // Apenas saída e URL
-      basicArgs.push('--output', expectedOutputPath, cleanUrl)
+      const fallbackCleanUrl = this.cleanYoutubeUrl(request.url)
+      basicArgs.push('--output', expectedOutputPath, fallbackCleanUrl)
 
       const fallbackCommand = basicArgs.join(' ')
       logger.info(`Fallback command: ${fallbackCommand}`)
