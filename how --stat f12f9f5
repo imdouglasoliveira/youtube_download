@@ -1,0 +1,33 @@
+[33mcommit f12f9f5997b0fe8bb58b12d124c2e00e014652da[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;32mbeta[m[33m)[m
+Author: Douglas Oliveira <63203428+imdsoliveira@users.noreply.github.com>
+Date:   Fri Sep 26 22:53:47 2025 -0300
+
+    feat: Correção completa de timeouts e documentação profissional
+    
+    � Correções Técnicas:
+    - Timeouts aumentados drasticamente para resolver problemas de preview e download
+    - exec timeout: 90s → 180s (3 minutos)
+    - setTimeout timeout: 120s → 240s (4 minutos)
+    - socket-timeout: 30s → 60s
+    - Hierarquia de timeouts corrigida (exec < setTimeout)
+    
+    � Documentação:
+    - README.md completamente reestruturado com badges profissionais
+    - Documentação Swagger atualizada com repositório correto
+    - API endpoints documentados com exemplos de uso
+    - Guia completo de instalação e configuração
+    - Seção de solução de problemas expandida
+    
+    � Resultados:
+    - Preview funcionando: yt-dlp tem tempo suficiente para buscar informações
+    - Download funcionando: Processo não é mais interrompido prematuramente
+    - Sistema estável: Timeouts realistas para operações reais
+    - Documentação profissional pronta para uso público
+    
+    Resolve: Problemas de timeout 408 e exit code null no yt-dlp
+
+ README.md                                  | 250 [32m++++++++++++++++++++++++++++[m[31m-[m
+ apps/backend/src/config/swagger.ts         |   2 [32m+[m[31m-[m
+ apps/backend/src/services/ytdlp.service.ts |   9 [32m+[m[31m-[m
+ scripts/dev-robust.js                      |   6 [32m+[m[31m-[m
+ 4 files changed, 260 insertions(+), 7 deletions(-)
