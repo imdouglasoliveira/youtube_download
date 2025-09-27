@@ -1,0 +1,315 @@
+# ===========================================
+# 🏗️ BUILD & COMPILATION
+# ===========================================
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+.next/
+out/
+coverage/
+.nyc_output/
+*.tgz
+*.tar.gz
+
+# ===========================================
+# 📦 DEPENDENCIES & PACKAGE MANAGERS
+# ===========================================
+node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+package-lock.json
+yarn.lock
+pnpm-debug.log*
+
+# ===========================================
+# 🔐 ENVIRONMENT & SECURITY
+# ===========================================
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# ===========================================
+# 📝 LOGS & RUNTIME
+# ===========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+combined.log
+error.log
+access.log
+audit.log
+*.pid
+*.seed
+*.pid.lock
+.npm
+.eslintcache
+.stylelintcache
+
+# ===========================================
+# 🐍 PYTHON (yt-dlp)
+# ===========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ===========================================
+# 💾 MEDIA & DOWNLOADS
+# ===========================================
+YouTube_Downloads/
+downloads/
+Downloads/
+*.mp4
+*.mp3
+*.webm
+*.mkv
+*.avi
+*.mov
+*.wmv
+*.flv
+*.m4a
+*.wav
+*.flac
+*.aac
+*.ogg
+*.wma
+*.3gp
+*.flv
+*.f4v
+*.asf
+*.rm
+*.rmvb
+*.vob
+*.ogv
+*.drc
+*.gif
+*.gifv
+*.mng
+*.avi
+*.mov
+*.qt
+*.wmv
+*.yuv
+*.rm
+*.rmvb
+*.asf
+*.amv
+*.m4p
+*.m4v
+*.mpg
+*.mp2
+*.mpeg
+*.mpe
+*.mpv
+*.mpg
+*.mpeg
+*.m2v
+*.m4v
+*.svi
+*.3gp
+*.3g2
+*.mxf
+*.roq
+*.nsv
+*.flv
+*.f4v
+*.f4p
+*.f4a
+*.f4b
+
+# ===========================================
+# 🗄️ DATABASE & STORAGE
+# ===========================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ===========================================
+# 🧪 TESTING
+# ===========================================
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+test-results.xml
+junit.xml
+*.lcov
+
+# ===========================================
+# 💻 EDITOR & IDE
+# ===========================================
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.swn
+*.sublime-project
+*.sublime-workspace
+.atom/
+.brackets.json
+.editorconfig
+
+# ===========================================
+# 🖥️ OPERATING SYSTEM
+# ===========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# ===========================================
+# 🗂️ CACHE & TEMPORARY FILES
+# ===========================================
+.cache/
+.parcel-cache/
+.temp/
+.tmp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ===========================================
+# 🤖 AI & DOCUMENTATION
+# ===========================================
+CLAUDE.md
+.claude/
+.ai/
+docs/ai/
+*.ai.md
+.copilot/
+.github/copilot/
+
+# ===========================================
+# 🎯 PROJECT SPECIFIC
+# ===========================================
+.ui/
+.images/
+config/local.json
+config/secrets.json
+scripts/local/
+*.local
+*.dev
+*.staging
+*.prod
+
+# ===========================================
+# 🔧 DEVELOPMENT TOOLS
+# ===========================================
+.husky/_/
+.npmrc.local
+.yarnrc.local
+.pnpmfile.local.js
+.turbo/
+.turbo-cache/
+
+# ===========================================
+# 📊 ANALYTICS & MONITORING
+# ===========================================
+*.analytics
+*.metrics
+*.telemetry
+monitoring/
+analytics/
+
+# ===========================================
+# 🚀 DEPLOYMENT & CI/CD
+# ===========================================
+.vercel/
+.netlify/
+.aws/
+.docker/
+docker-compose.override.yml
+*.deployment
+*.deploy
+deployment/
+deploy/
+
+# ===========================================
+# 🔄 BACKUP & ARCHIVE
+# ===========================================
+*.backup
+*.bak
+*.old
+*.orig
+*.rej
+*.patch
+*.diff
+backup/
+archives/
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.bz2
+*.xz
+
+# ===========================================
+# Temporary files
+# ===========================================
+*docs
+*/docs/logs/*

@@ -1,0 +1,58 @@
+{
+  "name": "youtube-downloader",
+  "version": "1.0.0",
+  "private": true,
+  "description": "YouTube Downloader - Monorepo with frontend and backend",
+  "author": "dsoliveira",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "scripts": {
+    "dev": "node scripts/dev-robust.js development",
+    "dev:simple": "concurrently \"npm run dev:backend:direct\" \"npm run dev:frontend:direct\"",
+    "dev:clean": "npm run kill-ports:force && npm run dev",
+    "dev:turbo": "npm run kill-ports && turbo dev",
+    "dev:production": "node scripts/dev-robust.js production",
+    "dev:testing": "node scripts/dev-robust.js testing",
+    "configure": "node scripts/configure-ports.js",
+    "configure:prod": "node scripts/configure-ports.js production",
+    "configure:test": "node scripts/configure-ports.js testing",
+    "dev:backend:direct": "cd apps/backend && npm run dev",
+    "dev:frontend:direct": "cd apps/frontend && npm run dev -- --port 3001",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "prepare": "husky install",
+    "dev:frontend": "cd apps/frontend && npm run dev -- --port 3001",
+    "dev:backend": "cd apps/backend && npm run dev",
+    "build:frontend": "turbo build --filter=@youtube-dl/frontend",
+    "build:backend": "turbo build --filter=@youtube-dl/backend",
+    "kill-ports": "node -e \"console.log('🧹 Limpando portas...')\" && (powershell -ExecutionPolicy Bypass -File ./scripts/kill-ports.ps1 2>nul || ./scripts/kill-ports.sh 2>/dev/null || echo '⚠️  Scripts de limpeza não encontrados')",
+    "kill-ports:force": "node -e \"console.log('🧹 Limpeza forçada de portas...')\" && (powershell -ExecutionPolicy Bypass -File ./scripts/kill-ports.ps1 -Force 2>nul || ./scripts/kill-ports.sh --force 2>/dev/null || echo '⚠️  Scripts de limpeza não encontrados')",
+    "install:all": "pnpm install --frozen-lockfile && npm run install:python",
+    "install:python": "python -c \"import subprocess; subprocess.run(['poetry', 'install'], check=True)\"",
+    "setup": "npm run install:all && npm run build",
+    "postinstall": "npm run install:python"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "turbo": "^1.11.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,json,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}
